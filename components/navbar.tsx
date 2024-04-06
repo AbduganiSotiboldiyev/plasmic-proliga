@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -22,9 +22,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 const pages = ['Main','Products', 'Pricing', 'Blog',"Some"];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar({className } : {className: string},props: { showAnimation: boolean }) {
-  const [anchorElNav, setAnchorElNav] = useState <null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState <null | HTMLElement>(null);
+function Navbar({className } : {className: string},props: { showAnimation: boolean }) {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -68,42 +68,7 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
               LOGO
             </Typography>
 
-            {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box> */}
+
             <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
             <Typography
               variant="h5"
@@ -139,21 +104,21 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
                 anchorEl={anchorElNav}
                 anchorOrigin={{
                   vertical: 'bottom',
-                  horizontal: 'left',
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: 'top',
-                  horizontal: 'left',
+                  horizontal: 'right',
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', },
+                  display: { md: 'block'} ,marginLeft:{md:"-8px"},margin :{xs:"-8px",}
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={handleCloseNavMenu} sx={{width:{xs :"100vw",md:"550px"}}}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
@@ -165,9 +130,9 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'inline' }}
                 >
+                  <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
                     {pages[0]}
-                  {/* <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
-                  </Link> */}
+                  </Link>
                 </Button>
               
 
@@ -180,9 +145,9 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
+                  <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
                     {page}
-                  {/* <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
-                  </Link> */}
+                  </Link>
                 </Button>
               ))}
             </Box>
@@ -226,4 +191,4 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
     </div>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;

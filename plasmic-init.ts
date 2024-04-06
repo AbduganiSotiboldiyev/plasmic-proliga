@@ -1,5 +1,5 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
-import ResponsiveAppBar from "./components/navbar";
+import Navbar from "./components/navbar"
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -23,20 +23,25 @@ export const PLASMIC = initPlasmicLoader({
 // http://localhost:3000/plasmic-host).  See
 // https://docs.plasmic.app/learn/app-hosting/#set-a-plasmic-project-to-use-your-app-host
 
-// PLASMIC.registerComponent(ResponsiveAppBar, {
-//   name : "Navbar",
-//   isAttachment: true,
-//   props :  {
-//     disabled: 'boolean',
-//     vertical: 'boolean',
-//     maxAngleX: 'number',
-//     maxAngleY: 'number',
-//     color: 'string',
-//     children: 'slot'
-//   },
-//   defaultStyles: {
-//     width: '100%',
-//     maxWidth: '180px'
-//   }
+Navbar.plasmic = {
+  importPath : "./components/navbar.tsx",
 
-// } );
+}
+
+PLASMIC.registerComponent(Navbar, {
+  name : "Navbar",
+  isAttachment: true,
+  props :  {
+    disabled: 'boolean',
+    vertical: 'boolean',
+    maxAngleX: 'number',
+    maxAngleY: 'number',
+    color: 'string',
+    children: 'slot'
+  },
+  defaultStyles: {
+    width: '100%',
+    maxWidth: '180px'
+  }
+
+} );
