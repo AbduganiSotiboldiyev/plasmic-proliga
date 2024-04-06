@@ -23,20 +23,20 @@ export const PLASMIC = initPlasmicLoader({
 // http://localhost:3000/plasmic-host).  See
 // https://docs.plasmic.app/learn/app-hosting/#set-a-plasmic-project-to-use-your-app-host
 
-PLASMIC.registerComponent(ResponsiveAppBar, {
-  name : "Navbar",
-  isAttachment: true,
-  props :  {
-    disabled: 'boolean',
-    vertical: 'boolean',
-    maxAngleX: 'number',
-    maxAngleY: 'number',
-    color: 'string',
-    children: 'slot'
-  },
-  defaultStyles: {
-    width: '100%',
-    maxWidth: '180px'
-  }
+// PLASMIC.registerComponent(ResponsiveAppBar, {
+//   name : "Navbar",
+//   isAttachment: true,
+//   props :  {
+//     disabled: 'boolean',
+//     vertical: 'boolean',
+//     maxAngleX: 'number',
+//     maxAngleY: 'number',
+//     color: 'string',
+//     children: 'slot'
+//   },
+//   defaultStyles: {
+//     width: '100%',
+//     maxWidth: '180px'
+//   }
 
-} );
+// } );
