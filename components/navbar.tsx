@@ -149,7 +149,7 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: 'block', },
                 }}
               >
                 {pages.map((page) => (
@@ -165,9 +165,9 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'inline' }}
                 >
-                  <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
                     {pages[0]}
-                  </Link>
+                  {/* <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
+                  </Link> */}
                 </Button>
               
 
@@ -180,9 +180,9 @@ function ResponsiveAppBar({className } : {className: string},props: { showAnimat
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
                     {page}
-                  </Link>
+                  {/* <Link  href='https://mui.com/material-ui/react-link/' color="inherit" underline='none'>
+                  </Link> */}
                 </Button>
               ))}
             </Box>
